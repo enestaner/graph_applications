@@ -121,9 +121,15 @@ int main(){
         // LABELED TREE - PRUFER
         cout << "Enter the node amount:" << endl;
         cin >> size;
-        graph g1 = graph(size, 't');
-        g1.printMatrix(g1.adj_matrix);
-        g1.findPrufer();
+
+        if(size > 2){
+            graph g1 = graph(size, 't');
+            g1.printMatrix(g1.adj_matrix);
+            g1.findPrufer();
+        }
+        else if(size == 2) cout << "Prufer code is {} -> empty code" << endl;
+        else if(size == 1) cout << "There is no prufer code" << endl;
+        else cout << "Error" << endl;
     }
     else cout << "Error" << endl;
     
