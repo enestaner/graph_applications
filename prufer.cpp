@@ -105,20 +105,27 @@ void graph :: pruferDecoder(){
 
 int main(){
 
-    int size;
+    int size, type;
 
-    // LABELED TREE - PRUFER
-    cout << "Enter the node amount:" << endl;
-    cin >> size;
-    graph g1 = graph(size, 't');
-    g1.printMatrix(g1.adj_matrix);
-    g1.findPrufer();
+    cout << "If you want to labeled tree -> prufer enter 0, otherwise enter 1: ";
+    cin >> type;
 
-    //PRUFER - LABELED TREE
-    cout << endl << "enter the length of prufer" << endl;
-    cin >> size;
-    graph g2 = graph(size+2, 'o');
-    g2.pruferDecoder();
-
+    if(type == 1){
+        //PRUFER - LABELED TREE
+        cout << endl << "enter the length of prufer" << endl;
+        cin >> size;
+        graph g2 = graph(size+2, 'o');
+        g2.pruferDecoder();
+    }
+    else if(type == 0){
+        // LABELED TREE - PRUFER
+        cout << "Enter the node amount:" << endl;
+        cin >> size;
+        graph g1 = graph(size, 't');
+        g1.printMatrix(g1.adj_matrix);
+        g1.findPrufer();
+    }
+    else cout << "Error" << endl;
+    
     return 0;
 }
