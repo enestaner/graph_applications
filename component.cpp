@@ -37,10 +37,14 @@ int main(){
 
     cout << "Enter the node amount: " << endl;
     cin >> size;
-    graph g1 = graph(size, 'w');
-    g1.printMatrix(g1.adj_matrix);
-    g1.countComponents();
-    cout << "Component Count: " << g1.components << endl;
+
+    if(size > 0){
+        graph g1 = graph(size, 'w');
+        g1.printMatrix(g1.adj_matrix);
+        g1.countComponents();
+        cout << "Component Count: " << g1.components << endl;
+    }
+    else cout << "Error" << endl;
 
     return 0;
 }

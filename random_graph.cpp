@@ -6,8 +6,12 @@ int main(){
 
     cout << "Enter the node amount: " << endl;
     cin >> size;
-    graph g1 = graph(size, 'r');
-    g1.printMatrix(g1.adj_matrix);
+
+    if(size > 0){
+        graph g1 = graph(size, 'r');
+        g1.printMatrix(g1.adj_matrix);
+    }
+    else cout << "Error" << endl;
 
     return 0;
 }

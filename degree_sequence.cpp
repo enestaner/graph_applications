@@ -74,10 +74,14 @@ int main(){
 
     cout << "Enter the size of sequence" << endl;
     cin >> size;
-    sequence = createSequence(size);
-    isGraphic(sequence) == 1 ? is_graphic = "YES" : is_graphic = "NO";
-    cout << "Is sequence graphic: " << is_graphic << endl;
 
+    if(size > 0){
+        sequence = createSequence(size);
+        isGraphic(sequence) == 1 ? is_graphic = "YES" : is_graphic = "NO";
+        cout << "Is sequence graphic: " << is_graphic << endl;
+    }
+    else cout << "Error" << endl;
+    
     return 0;
 }
 

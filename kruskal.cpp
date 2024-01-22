@@ -78,8 +78,12 @@ int main(){
 
     cout << "enter the node amount: " << endl;
     cin >> size;
-    graph g1 = graph(size, 'w');
-    g1.kruskal();
+
+    if(size > 0){
+        graph g1 = graph(size, 'w');
+        g1.kruskal(); 
+    }
+    else cout << "Error" << endl;
 
     return 0;
 }
